@@ -27,7 +27,7 @@ namespace BinarySearchTree
         public void insert(string element) //insert a node in the binary search tree
         {
             Node tmp, parent = null, currentNode = null;
-            Search(element, ref parent, ref currentNode);
+            search(element, ref parent, ref currentNode);
             if (currentNode != null) //check if the node to be inserted already inserted or not
             {
                 Console.WriteLine("Duplicate words not allowed");
@@ -50,11 +50,19 @@ namespace BinarySearchTree
                 }
             }
         }
-    }
-    internal class Program
-    {
-        static void Main(string[] args)
+        public void search(string element, ref Node parent, ref Node currentNode)
         {
+            //this function the currentNode of the specified Node as well as the current Node of its parent 
+            currentNode = ROOT;
+            parent = null;
+            while ((currentNode != null) && (currentNode.info != element))
+            {
+                parent = currentNode;
+                if (string.Compare(element, currentNode.info) < 0)
+                    currentNode = currentNode.leftchild;
+                else
+                    currentNode = currentNode.rightchild;
+            }
         }
     }
 }
