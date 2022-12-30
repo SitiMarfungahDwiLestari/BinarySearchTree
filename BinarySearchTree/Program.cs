@@ -16,6 +16,15 @@ namespace BinarySearchTree
             rightchild = r;
         }
     }
+    //A node class consists os three things, the information, references to the right child, and the reference to the left child
+    class BinaryTree
+    {
+        public Node ROOT;
+        public BinaryTree()
+        {
+            ROOT = null; //Initializing ROOT to the null
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
